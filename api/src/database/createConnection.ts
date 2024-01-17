@@ -9,7 +9,7 @@ const createDatabaseConnection = (): Promise<Connection> => {
     port: Number(5432),
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
+    database: 'database',
     entities: Object.values(entities),
     synchronize: true,
   });

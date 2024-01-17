@@ -6,14 +6,19 @@ import { createEntity } from 'utils/typeorm';
 const seedUsers = (): Promise<User[]> => {
   const users = [
     createEntity(User, {
-      email: 'gaben@jira.test',
-      name: 'Gaben',
-      avatarUrl: 'https://i.ibb.co/6RJ5hq6/gaben.jpg',
+      email: 'sueda@omu.com',
+      name: 'Sueda Cakir',
+      avatarUrl: 'https://r.resimlink.com/1-LjRvUamCM.jpeg?v=8403ceff339db7fefb105ef20bcfe7e4',
     }),
     createEntity(User, {
-      email: 'yoda@jira.test',
-      name: 'Yoda',
-      avatarUrl: 'https://i.ibb.co/6n0hLML/baby-yoda.jpg',
+      email: 'sueda@omu.com',
+      name: 'Elif ay',
+      avatarUrl: 'https://r.resimlink.com/rg12ZCufe.jpeg?v=1b0930dbadb6b227d3d70d37a46f29e7',
+    }),
+    createEntity(User, {
+      email: 'ummugulsum@omu.com',
+      name: 'ümmügülsüm güneş',
+      avatarUrl: 'https://r.resimlink.com/H5vTza.jpeg?v=7effbf236ef11e4eaaf221b461dc391f',
     }),
   ];
   return Promise.all(users);
@@ -21,9 +26,10 @@ const seedUsers = (): Promise<User[]> => {
 
 const seedProject = (users: User[]): Promise<Project> =>
   createEntity(Project, {
-    name: 'Project name',
-    url: 'https://www.testurl.com',
-    description: 'Project description',
+    name: 'Omu VTYS',
+    url: 'https://www.atlassian.com/software/jira',
+    description:
+      'Plan, track, and manage your agile and software development projects in Jira. Customize your workflow, collaborate, and release great software.',
     category: ProjectCategory.SOFTWARE,
     users,
   });
@@ -33,37 +39,17 @@ const seedIssues = (project: Project): Promise<Issue[]> => {
 
   const issues = [
     createEntity(Issue, {
-      title: 'Issue title 1',
+      title: 'Ornek task basligi',
       type: IssueType.TASK,
       status: IssueStatus.BACKLOG,
-      priority: IssuePriority.LOWEST,
-      listPosition: 1,
-      reporterId: users[0].id,
-      project,
-    }),
-    createEntity(Issue, {
-      title: 'Issue title 2',
-      type: IssueType.TASK,
-      status: IssueStatus.BACKLOG,
-      priority: IssuePriority.MEDIUM,
-      listPosition: 2,
-      estimate: 5,
-      description: 'Issue description 2',
-      reporterId: users[0].id,
-      users: [users[0]],
-      project,
-    }),
-    createEntity(Issue, {
-      title: 'Issue title 3',
-      type: IssueType.STORY,
-      status: IssueStatus.SELECTED,
       priority: IssuePriority.HIGH,
-      listPosition: 3,
-      estimate: 10,
-      description: 'Issue description 3',
-      reporterId: users[0].id,
-      users: [users[0], users[1]],
+      listPosition: 1,
+      description: ``,
+      estimate: 8,
+      timeSpent: 4,
+      reporterId: users[1].id,
       project,
+      users: [users[0]],
     }),
   ];
   return Promise.all(issues);

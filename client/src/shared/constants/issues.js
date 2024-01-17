@@ -26,10 +26,10 @@ export const IssueTypeCopy = {
 };
 
 export const IssueStatusCopy = {
-  [IssueStatus.BACKLOG]: 'Backlog',
-  [IssueStatus.SELECTED]: 'Selected for development',
-  [IssueStatus.INPROGRESS]: 'In progress',
-  [IssueStatus.DONE]: 'Done',
+  [IssueStatus.BACKLOG]: 'TAMAMLANACAK',
+  [IssueStatus.SELECTED]: 'SECILDI',
+  [IssueStatus.INPROGRESS]: 'DEVAM EDIYOR',
+  [IssueStatus.DONE]: 'TAMAMLANDI',
 };
 
 export const IssuePriorityCopy = {
